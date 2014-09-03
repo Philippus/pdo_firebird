@@ -51,7 +51,7 @@ EOD;
     {
         $this->db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_SILENT);
         $this->db->exec("INSERT INTO testuser (ID, NAME, ADDRESS, COMPANY) VALUES ('BOGUS_PK', 'a', 'b', 'c')");
-        $this->AssertTrue(count($this->db->errorInfo()) > 0);
+        $this->assertTrue(count($this->db->errorInfo()) > 0);
     }
 
     /**
